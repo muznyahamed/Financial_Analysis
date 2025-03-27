@@ -1,3 +1,17 @@
+# Financial Data Analysis and Visualization Platform
+
+## Project Overview
+
+This project is a comprehensive financial data analysis platform that allows users to process, analyze, visualize, and compare financial data from multiple companies. The platform includes data extraction from financial reports, predictive modeling, and an interactive dashboard with AI-powered chat assistance.
+
+## Features
+
+- **Data Extraction**: Automated extraction of financial data from PDF reports
+- **Data Processing**: Cleaning and structuring financial data for analysis
+- **Predictive Modeling**: Machine learning models to predict future financial performance
+- **Interactive Dashboard**: Visualize and compare key financial metrics
+- **AI Chat Assistant**: Ask questions about financial data and get insights
+
 ## Project Structure
 ├── data/
 │ ├── raw/ # Original PDF reports downloaded from CSE
@@ -48,3 +62,25 @@
 ├── setup.py # Package installation
 ├── LICENSE
 └── README.md # Project overview
+
+The dashboard will be accessible at `http://localhost:8501` in your web browser.
+
+## Using the Dashboard
+
+1. **Select a Company**: Choose from available companies in the sidebar
+2. **Apply Filters**: Filter data by date range or specific years
+3. **Compare Companies**: Enable the comparison feature to analyze multiple companies
+4. **Explore Tabs**: Navigate between analysis tabs for different perspectives
+5. **Chat with AI**: Click "Switch to Chat Assistant" to ask questions in natural language
+
+## Future Enhancements
+
+- Support for additional companies
+- More advanced predictive models
+- Export of analysis reports
+- Mobile optimization
+- Integration with real-time financial data APIs
+
+## Conclusion
+
+This financial analysis platform demonstrates the power of combining data processing, machine learning, and interactive visualization to gain insights from financial data. The inclusion of an AI assistant makes complex financial analysis accessible to users through natural language queries.
