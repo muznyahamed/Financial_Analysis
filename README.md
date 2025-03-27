@@ -4,6 +4,12 @@
 
 This project is a comprehensive financial data analysis platform that allows users to process, analyze, visualize, and compare financial data from multiple companies. The platform includes data extraction from financial reports, predictive modeling, and an interactive dashboard with AI-powered chat assistance.
 
+## Important API Keys Required
+
+**The following API keys must be configured in your .env file:**
+- `OPENAI_API_KEY`: Required for AI chat assistance and natural language processing
+- `PERPLEXITY_API_KEY`: Required for advanced data analysis and insights
+
 ## Features
 
 - **Data Extraction**: Automated extraction of financial data from PDF reports
