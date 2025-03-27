@@ -1,0 +1,147 @@
+[
+    {
+      "date": "2021-03-31",
+      "revenue": 13793391,
+      "COGS": 10109673,
+      "gross_profit": 3683718,
+      "operating_expenses": 1605861,
+      "operating_income": 2077857,
+      "net_income": 1953741
+    },
+    {
+      "date": "2021-06-30",
+      "revenue": 16781921,
+      "COGS": 13441706,
+      "gross_profit": 3340215,
+      "operating_expenses": 1790873,
+      "operating_income": 1549342,
+      "net_income": 1391393
+    },
+    {
+      "date": "2021-09-30",
+      "revenue": 13013255,
+      "COGS": 23965788,
+      "gross_profit": 6047467,
+      "operating_expenses": 3183776,
+      "operating_income": 2863691,
+      "net_income": 2472519
+    },
+    {
+      "date": "2021-12-31",
+      "revenue": 2743545,
+      "COGS": 34387146,
+      "gross_profit": 8356399,
+      "operating_expenses": 4395110,
+      "operating_income": 3961289,
+      "net_income": 3399698
+    },
+    {
+      "date": "2022-03-31",
+      "revenue": 12550438,
+      "COGS": 10174187,
+      "gross_profit": 2376251,
+      "operating_expenses": 1811340,
+      "operating_income": 4187591,
+      "net_income": 3011102
+    },
+    {
+      "date": "2022-06-30",
+      "revenue": 20730476,
+      "COGS": 15374560,
+      "gross_profit": 5355916,
+      "operating_expenses": 2253288,
+      "operating_income": 3102628,
+      "net_income": 4252636
+    },
+    {
+      "date": "2022-09-30",
+      "revenue": 1994058,
+      "COGS": 1598163,
+      "gross_profit": 1040435,
+      "operating_expenses": 4837685,
+      "operating_income": 3797250,
+      "net_income": 6079948
+    },
+    {
+      "date": "2022-12-31",
+      "revenue": 19586955,
+      "COGS": 15328969,
+      "gross_profit": 4257986,
+      "operating_expenses": 2867627,
+      "operating_income": 7125613,
+      "net_income": 922039
+    },
+    {
+      "date": "2023-03-31",
+      "revenue": 18518298,
+      "COGS": 13171748,
+      "gross_profit": 5346550,
+      "operating_expenses": 3042379,
+      "operating_income": 8388929,
+      "net_income": 1500437
+    },
+    {
+      "date": "2023-06-30",
+      "revenue": 18551212,
+      "COGS": 15084368,
+      "gross_profit": 3466844,
+      "operating_expenses": 2310752,
+      "operating_income": 1156092,
+      "net_income": 719991
+    },
+    {
+      "date": "2023-09-30",
+      "revenue": 18272973,
+      "COGS": 14039036,
+      "gross_profit": 4233937,
+      "operating_expenses": 2852531,
+      "operating_income": 1381406,
+      "net_income": 1143122
+    },
+    {
+      "date": "2023-12-31",
+      "revenue": 18041721,
+      "COGS": 14175982,
+      "gross_profit": 3865739,
+      "operating_expenses": 2638729,
+      "operating_income": 1227010,
+      "net_income": 916225
+    },
+    {
+      "date": "2024-03-31",
+      "revenue": 19076054,
+      "COGS": 13583528,
+      "gross_profit": 5492526,
+      "operating_expenses": 2347454,
+      "operating_income": 7839980,
+      "net_income": 2958639
+    },
+    {
+      "date": "2024-06-30",
+      "revenue": 19186326,
+      "COGS": 15665738,
+      "gross_profit": 3520588,
+      "operating_expenses": 2598062,
+      "operating_income": 922526,
+      "net_income": 812512
+    },
+    {
+      "date": "2024-09-30",
+      "revenue": 21277143,
+      "COGS": 16638143,
+      "gross_profit": 4639000,
+      "operating_expenses": 2624352,
+      "operating_income": 2014648,
+      "net_income": 1306732
+    },
+    {
+      "date": "2024-12-31",
+      "revenue": 19343267,
+      "COGS": 15514434,
+      "gross_profit": 3828833,
+      "operating_expenses": 2860296,
+      "operating_income": 968537,
+      "net_income": 1157488
+    }
+  ]
+  
