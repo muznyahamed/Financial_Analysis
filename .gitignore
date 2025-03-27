@@ -1,62 +1,14 @@
-# Data files
-data/raw/
-data/interim/
-*.csv
-*.xlsx
-*.json
-*.parquet
-*.pdf
+# Only ignore essential files that should not be in version control
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-notebooks/.ipynb_checkpoints/
-
-# Python
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # Virtual Environment
 venv/
 env/
 ENV/
-.env
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # IDE specific files
 .idea/
@@ -65,23 +17,13 @@ var/
 *.swo
 .DS_Store
 
-# Dashboard generated resources
-dashboard/assets/generated/
-
-# Generated reports and figures
-reports/figures/*
-!reports/figures/.gitkeep
+# Environment variables
+.env
+.env.local
 
 # Logs
-logs/
 *.log
 
 # Cache
-.cache/
 .pytest_cache/
 .coverage
-htmlcov/
-
-# Environment variables
-.env
-.env.local 
