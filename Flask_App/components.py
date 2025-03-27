@@ -680,39 +680,132 @@ def apply_chat_css():
     """Apply custom CSS styling for the chat interface"""
     st.markdown("""
     <style>
-        .chat-message {
-            padding: 1.5rem; 
-            border-radius: 0.5rem; 
-            margin-bottom: 1rem; 
+        /* Main container styling */
+        .main {
+            padding: 0 !important;
             display: flex;
             flex-direction: column;
+            height: 100vh;
         }
+        
+        /* Chat message styling */
+        .chat-message {
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            max-width: 85%;
+        }
+        
+        /* User messages */
         .chat-message.user {
-            background-color: #f0f2f6;
-        }
-        .chat-message.assistant {
-            background-color: #e6f0ff;
-        }
-        .chat-message .avatar {
-            width: 40px;
-            height: 40px;
+            background-color: #dcf8c6; /* WhatsApp green for user messages */
+            align-self: flex-end;
+            border-bottom-right-radius: 0.2rem;
+            margin-left: auto;
             margin-right: 10px;
         }
-        .chat-message .content {
-            flex-grow: 1;
+        
+        /* Assistant messages */
+        .chat-message.assistant {
+            background-color: #f0f0f0; /* WhatsApp gray for received messages */
+            align-self: flex-start;
+            border-bottom-left-radius: 0.2rem;
+            margin-right: auto;
+            margin-left: 10px;
         }
+        
+        /* Header styling */
         .finance-header {
-            background-color: #0366d6;
+            background-color: #075e54; /* WhatsApp header color */
             color: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 0;
+            margin-bottom: 1rem;
+            z-index: 100;
+            width: 100%;
         }
+        
+        .finance-header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .finance-header p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+        
+        /* Messages container */
+        .chat-messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            margin-bottom: 70px; /* Space for input field */
+            width: 100%;
+        }
+        
+        /* Input field area */
+        .chat-input-area {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #e0e0e0;
+            z-index: 100;
+            width: 100%;
+        }
+        
+        /* Example questions */
         .example-questions {
             background-color: #f8f9fa;
             padding: 1rem;
             border-radius: 0.5rem;
             margin-bottom: 1rem;
+        }
+        
+        /* Make sure stChatMessage containers adapt to our styling without restricting width too much */
+        [data-testid="stChatMessage"] {
+            width: auto !important;
+            max-width: 85% !important;
+        }
+        
+        /* Ensure chat content is not restricted */
+        [data-testid="stChatMessageContent"] {
+            width: 100% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        
+        /* Ensure text in messages has proper spacing */
+        .chat-message p, [data-testid="stMarkdownContainer"] p {
+            margin: 0;
+            width: 100%;
+            white-space: normal;
+        }
+        
+        /* Adjust the container block to use full width */
+        .block-container {
+            max-width: 100% !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        
+        /* Adjust input field styling */
+        [data-testid="stChatInput"] {
+            background-color: white;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            width: 100%;
+        }
+        
+        /* Fix sidebar padding */
+        [data-testid="stSidebar"] .block-container {
+            padding-top: 2rem;
         }
     </style>
     """, unsafe_allow_html=True)

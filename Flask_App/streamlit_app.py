@@ -75,12 +75,6 @@ if not st.session_state.chat_mode:
 else:
     # Apply chat-specific CSS
     apply_chat_css()
-    st.markdown("""
-    <div class="finance-header">
-        <h1>💬 Financial AI Assistant</h1>
-        <p>Ask questions about financial performance, get analysis and recommendations</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # App description and user guide in sidebar
 st.sidebar.header("App Overview")
@@ -257,10 +251,11 @@ else:
         st.info("Example format: OPENAI_API_KEY=your_key_here")
         st.stop()
     
-    # Create two columns: main chat area and sidebar info
-    col1, col2 = st.columns([3, 1])
+    # Create a container for the entire chat interface
+    chat_container = st.container()
     
-    with col2:
+    # Create a container for the info sidebar
+    with st.sidebar:
         st.subheader("About this Assistant")
         st.markdown("""
         This AI assistant can:
@@ -296,34 +291,69 @@ else:
             st.session_state.agent.reset_memory()
             st.rerun()
     
-    with col1:
-        # Display chat messages
-        for message in st.session_state.chat_history:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+    # Create the main chat interface
+    with chat_container:
+        # Create a layout with three rows:
+        # 1. Header
+        # 2. Messages (takes most space)
+        # 3. Input field (at bottom)
         
-        # Chat input
-        if prompt := st.chat_input("Ask me about financial data or Sri Lankan business insights..."):
+        # 1. Header row
+        st.markdown("""
+        <div class="finance-header">
+            <h1>💬 Financial AI Assistant</h1>
+            <p>Ask questions about financial performance, get analysis and recommendations</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # 2. Messages container (will take most of the vertical space)
+        messages_container = st.container()
+        
+        # 3. Input container (will be at the bottom)
+        input_container = st.container()
+        
+        # Create a container for styling the bottom input area
+        with input_container:
+            st.markdown('<div class="chat-input-area">', unsafe_allow_html=True)
+            prompt = st.chat_input("Ask me about financial data or Sri Lankan business insights...")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Display messages in the messages container
+        with messages_container:
+            st.markdown('<div class="chat-messages-container">', unsafe_allow_html=True)
+            # Display chat messages from history
+            for message in st.session_state.chat_history:
+                with st.chat_message(message["role"]):
+                    st.markdown(message["content"])
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Handle new user input
+        if prompt:
             # Add user message to chat history
             st.session_state.chat_history.append({"role": "user", "content": prompt})
             
             # Display user message
-            with st.chat_message("user"):
-                st.markdown(prompt)
+            with messages_container:
+                with st.chat_message("user"):
+                    st.markdown(prompt)
             
             # Display assistant response
-            with st.chat_message("assistant"):
-                with st.spinner("Analyzing financial data..."):
-                    message_placeholder = st.empty()
-                    try:
-                        response = st.session_state.agent.run(prompt)
-                        message_placeholder.markdown(response)
-                        # Add assistant response to chat history
-                        st.session_state.chat_history.append({"role": "assistant", "content": response})
-                    except Exception as e:
-                        error_msg = f"Error: {str(e)}"
-                        message_placeholder.error(error_msg)
-                        st.session_state.chat_history.append({"role": "assistant", "content": error_msg})
+            with messages_container:
+                with st.chat_message("assistant"):
+                    with st.spinner("Analyzing financial data..."):
+                        message_placeholder = st.empty()
+                        try:
+                            response = st.session_state.agent.run(prompt)
+                            message_placeholder.markdown(response)
+                            # Add assistant response to chat history
+                            st.session_state.chat_history.append({"role": "assistant", "content": response})
+                        except Exception as e:
+                            error_msg = f"Error: {str(e)}"
+                            message_placeholder.error(error_msg)
+                            st.session_state.chat_history.append({"role": "assistant", "content": error_msg})
+            
+            # Rerun to refresh the UI correctly
+            st.rerun()
 
 # Footer
 st.markdown("---")
